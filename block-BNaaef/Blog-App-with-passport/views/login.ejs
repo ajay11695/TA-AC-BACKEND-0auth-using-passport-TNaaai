@@ -1,0 +1,29 @@
+<%- include('partial/header') -%>
+
+    <div class="container">
+        <div class="form-user">
+            <form action="/users/login" method="POST" >
+                <h1 class="f-weight textalign">User Login</h1>
+                <% if(error){ %>
+                    <p class="font-red-400">
+                        <%= error %>
+                    </p>
+                    <% } %>
+                        <input class="formInput" type="email" name="email" placeholder="Enter email...">
+                        <input class="formInput" type="password" name="password" placeholder="Enter password...">
+                        <div class="textalign">
+                            <input class="btn f-weight" type="submit" value="LOGIN">
+                        </div>
+            </form>
+            <div class="textalign margin-t-20">
+                <p class="f-weight ">--OR--</p>
+                <hr>
+                <i class="fa-brands fa-github"></i>
+                <a class="f-weight" href="/auth/github">login with github</a>
+                <i class="fa-brands fa-google margin-l-20"></i>
+                <a class="f-weight" href="/auth/google">login with google</a>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partial/footer') -%>
